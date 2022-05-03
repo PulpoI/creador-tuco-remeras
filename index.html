@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Crea tu estilo - Tuco Remeras</title>
+
+   <!-- Logo Favicon -->
+   <link rel="icon" type="image/png" href="images/logo.png">
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Lato|Raleway|Quicksand:400,700|Barlow" rel="stylesheet">
+   <!-- Google TEE Fonts  -->
+   <link href="https://fonts.googleapis.com/css?family=Anton|Bungee+Inline|Cabin+Sketch|Julius+Sans+One|Lobster|Monoton" rel="stylesheet">
+   <!-- Font Awesome CDN -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+   <!-- jQuery files -->
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+   <!-- jQueryUI -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer></script>
+   <!-- My CSS styles -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- My JS files -->
+   <script src="js/app.js" defer></script>
+
+</head>
+<body>
+
+
+   <header>
+      <nav class="flex-nav">
+         <a href="https://tucoremeras.store/" class="nav-logo toggle-nav">Volver</a>
+         <!-- <a href="home.html"><img class="nav-icon toggle-nav" src="images/geo-flower-white.svg"></a> -->
+         <ul>
+            <li><a href="https://tucoremeras.store/" class="nav-logo nav-logo-hidden nav-active">Tuco Remeras</a></li>
+            <!-- <li><img src="images/geo-flower-white.svg" class="nav-icon"></li> -->
+            <li><a href="pages/shirt/shirt-front-black.html">CREA TU REMERA</a></li>
+            <li><a href="pages/hoodie/hoodie-front-black.html">CREA TU BUZO</a></li>
+            <!-- <li><a href="gallery.html">Gallery</a></li> -->
+            <li><a href="#" class="nav-hidden">.</a></li>
+            <!-- <li><a href="#">Log In/Out</a></li> -->
+         </ul>
+      </nav>
+   </header>
+
+   <main class="flex-welcome stacked">
+      <!-- SHIRT CONTAINER -->
+      <section class="shirt-container-welcome welcome-tee-margin">
+         <div class="current-tee">
+            <img class="tee" src="images/shirt-front-black.png" />
+         </div>
+         <div class="current-design">
+            <div id="design-target" class="print-area">
+               <img id="design-display" src="images/logo1.png" />
+               <p id="text-display"></p>
+            </div>
+         </div>
+      </section>
+
+      <!-- WELCOME CONTAINER -->
+      <section class="welcome-info-container">
+         <section class="welcome">
+            <h2>BIENVENIDO AL CREADOR</h2>
+            <p>¿Tienes una idea para el diseño de una remera?</p>
+            <p>Esta es una aplicación para probar sus ideas y diseñar tu diseño en una remera.</p>
+            <p>Sube tu propia imagen. <br>
+               Agrega algo de texto. <br>
+               Posiciona tu diseño</p>
+
+            <div class="image-design try">
+               <hr />
+               <br>
+               <h3>PRUÉBELO CON NUESTRO LOGOTIPO SIMULADO</h3>
+               <p>Cambie la ubicación de la imagen arrastrándola. Utilice los controles a continuación para ajustar el tamaño.</p>
+               <p>Hace una captura de pantalla</p>
+               <div class="flex-row">
+
+               <!-- upload file button, masked with a styled button -->
+               <p id="image-input" class="welcome-buffer"></p>
+               <button id="width-plus" class="welcome-control"><i class="fas fa-plus"></i></button>
+               <button id="width-minus" class="welcome-control"><i class="fas fa-minus"></i></button>
+               <p id="upload-button" class="welcome-buffer"></p>
+               </div>
+               <br>
+               <hr />
+            </div>
+            <a href="pages/shirt/shirt-front-black.html">
+               <button type="button" class="started-button">EMPIEZA TU DISEÑO</button>
+            </a>
+         </section>
+      </section>
+   </main>
+
+
+   <footer>
+      <a href="https://github.com/oxleberry" target="_blank"><p> &copy; oxleberry</p></a>
+   </footer>
+
+</body>
+</html>
