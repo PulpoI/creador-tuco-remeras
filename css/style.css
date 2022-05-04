@@ -1,18 +1,15 @@
-
 /* VARIABLE STYLES ========================================= */
 
 /* root will be applied across entire html document */
 /* or can set at the parent level of an element */
 :root {
-  --logo-color: black;
-  --yellow-color: #f6c500;
+  --logo-color: #333;
+  --yellow-color: #f7c025;
   /* to use = var(--logo-color, #E54B4B) */
   /* second value is a fallback value */
 }
 
 /* BASE STYLES ========================================= */
-
-
 * {
    box-sizing: border-box;
 }
@@ -20,7 +17,11 @@
 body {
    margin: 0;
    padding: 0;
-   font-family: 'Barlow', sans-serif;
+   font-family: "Lekton", sans-serif;
+}
+
+p{
+   font-family: "Ubuntu";
 }
 
 .flex-row {
@@ -86,16 +87,11 @@ header a:hover, header a:focus {
    display: none;
 }
 
-.nav-logo {
-   font-size: 1.4em;
-   padding: 1em 0;
-   font-weight: 800;
-   margin-top: -10px;
+.nav-logo img{
+   width: 50px ;
 }
-
-.nav-icon {
-   /* padding: .2em; */
-   height: 36px;
+.nav-logo img:hover{
+   width:53px;
 }
 
 .flex-nav, footer {
@@ -109,6 +105,8 @@ header a:hover, header a:focus {
    margin: 0;
    padding: 0;
    display: flex;
+   height: 70px;
+   align-items: center;
 }
 
 /* flex-basis is the min starting width
@@ -120,7 +118,7 @@ before an elements starts shrink or wrap */
 .flex-nav li a {
    /* color: #F0F8EA; */
    transition: all 0.5s;
-   padding-top: 1em;
+   
 }
 
 .flex-nav li a:hover,
@@ -137,6 +135,11 @@ before an elements starts shrink or wrap */
 .nav-hidden {
    display: none;
 }
+
+h4{
+   margin: 10px;
+}
+
 
 @media all and (max-width:800px) {
 
@@ -188,7 +191,7 @@ before an elements starts shrink or wrap */
 }
 
 .welcome {
-   padding: 3em 4em;
+   padding: 2em 3em;
    text-align: center;
 }
 
@@ -198,7 +201,7 @@ before an elements starts shrink or wrap */
 
 .welcome-info-container {
    max-width: 50%;
-   border: 8px solid #34485f;
+   border: 8px solid var(--logo-color);
    background-color: white;
    background-color: white;
    margin: 0 auto;
@@ -222,31 +225,64 @@ before an elements starts shrink or wrap */
    width: 27%;
 }
 
-.welcome-control {
-   background-image: linear-gradient(#fff, #ebf0f5);
+.welcome-control  {
+   background-image: linear-gradient(#fff, var(--logo-color));
    height: 53px;
    width: 41px;
    border-radius: 3px;
-   border: 1px solid #a8b6c5;
+   border: 1px solid var(--logo-color);
    font-size: .8em;
-   color: #34475f;
+   color: white;
 }
+
+.welcome-control:hover {
+   background-image: linear-gradient(#fff, var(--yellow-color));
+   color: var(--logo-color);
+}
+
+/* #width-minus{
+   position: absolute;
+   bottom: 335px;
+   right: 920px;
+}
+#width-plus{
+   position: absolute;
+   bottom: 335px;
+   right: 450px;
+}
+ */
+
+ .services-icon > span {
+   font-size: 36px;
+   padding-bottom: 5px;
+   clear: both;
+   float: top;
+ }
+ .services-icon > hr {
+   float: left;
+ }
+ 
+ .list p{
+    text-align: center;
+    padding: 0;
+ }
+ ul{
+   padding-inline-start: 0px
+ }
+
 
 .try {
    display: block;
    text-align: center;
-   margin-top: 2em;
-   margin-bottom: 1em;
 }
 
 .started-button {
    margin: 0 auto;
-   margin-top: 0.6em;
    font-size: 1em;
-   color: #34475f;
+   color: var(--logo-color);
    /* background-image: linear-gradient(#fff, #ebf0f5); */
    padding: .8em 4em;
-   border: 3px solid #42576f;
+   border: 3px solid var(--logo-color);
    border-radius: 3px;
 }
 
@@ -277,17 +313,42 @@ main {
 .info-container {
    /* width: 50%; */
    max-width: 60%;
-   border: 8px solid #34485f;
+   border: 8px solid var(--logo-color);
 }
 
 /* TEE CONTAINER ===================== */
 
 .tee {
-   max-width: 100%;
-   max-height: 100%;
+   /* max-width: 100%;
+   max-height: 100%; */
    width: auto;
-   height: auto;
-   padding: 7% 5%;
+   height: 600px;
+   padding-top: 40px;
+   /* padding: 7% 5%; */
+   
+}
+
+@media screen and (max-width: 1224px)  {
+ 
+   .tee {
+      /* max-width: 100%;
+      max-height: 100%; */
+      width: auto;
+      height: 440px;
+      padding-top: 40px;
+      /* padding: 7% 5%; */
+      
+   }
+   
+}
+
+
+
+
+#tee {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .resize-test {
@@ -327,7 +388,7 @@ main {
 /* IMAGE UPLOAD ========================= */
 
 .image-container {
-   border-bottom: 4px solid #34485f;
+   border-bottom: 4px solid var(--logo-color);
    padding: 1em;
 }
 
@@ -336,25 +397,38 @@ main {
    width: 150px;
    height: 52px;
    background: none;
-   border: 2px dashed #42586f;
-   color: #42586f;
+   border: 2px dashed var(--logo-color);
+   color: var(--logo-color);
    border-radius: 3px;
    font-size: 14px;
    margin-right: 1em;
    transition: all 50ms linear;
    cursor: pointer;
+   background-color: #f7bf251e;
+
+}
+.btns{
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   justify-content: center;
+}
+.btns button {
+   margin-bottom: 20px;
 }
 
 .image-upload:hover {
-   background-color: var(--logo-color);
+   background-color: black
 }
 
-.image-design span {
-   margin-top: 1em;
+.alto-ancho{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
 }
 
 .image-design {
-   /* border-bottom: 4px solid #34485f;
+   /* border-bottom: 4px solid var(--logo-color);;
    padding: .8em; */
    position: relative;
 }
@@ -387,9 +461,32 @@ input[type="color" i] {
    position: relative;
 }
 
+@media screen and (max-width: 1024px)  {
+   #design-display {
+      top: 15%;
+   }
+   canvas{
+    
+      /* padding-top: 40px !important; */
+      width: auto !important;
+      height:440px !important;
+      /* padding: 7% 5% !important; */
+   }
+   
+}
+
+
+.btn-sum{
+   position: relative;
+}
+
+.btn-re{
+   position: absolute;
+}
+
 #text-display {
    font-size: 3em;
-   color: var(--logo-color);
+   color: var(--yellow-color);
    left: 37%;
    top: 43%;
    /* width: 58%; */
@@ -399,7 +496,7 @@ input[type="color" i] {
 }
 
 .image-instr {
-   color: rgba(22, 52, 86, 0.6);
+   color: var(--logo-color);
    margin: 0;
    margin-bottom: .8em;
 }
@@ -458,8 +555,8 @@ input[type="color" i] {
 /* INFO CONTAINER ===================== */
 
 main h3 {
-   margin: 0 0 .4em;
-   color: #163456;
+   margin: 0;
+   color: var(--logo-color);
    font-weight: 400;
    text-transform: uppercase;
    padding-bottom: .3em;
@@ -468,7 +565,7 @@ main h3 {
 .garment,
 .image-container,
 .text-design {
-   border-bottom: 4px solid #34485f;
+   border-bottom: 4px solid var(--logo-color);;
    padding: .8em;
 }
 
@@ -511,7 +608,7 @@ main h3 {
 }
 
 .charcoal {
-   background-color: #5f5e5e;
+   background-color: var(--logo-color);;
 }
 
 .size-control {
@@ -519,10 +616,9 @@ main h3 {
    margin-right: 0.4em;
    width: 36px;
    border-radius: 3px;
-   border: 1px solid #a8b6c5;
-   background-image: linear-gradient(#fff, #ebf0f5);
-   font-size: .8em;
-   color: #34475f;
+   border: 1px solid var(--logo-color);
+   background-image: linear-gradient(#fff, var(--logo-color));   font-size: .8em;
+   color: white;
 }
 
 .size-control:nth-last-child(2n+ 1) {
@@ -571,17 +667,17 @@ main h3 {
    margin-top: 0.6em;
    width: 40%;
    font-size: 1em;
-   color: #34475f;
+   color: var(--logo-color);;
    /* background-image: linear-gradient(#fff, #ebf0f5); */
    padding: .8em 4em;
-   border: 3px solid #42576f;
+   border: 3px solid var(--logo-color);;
    border-radius: 3px;
 }
 
 .save:hover,
 .started-button:hover {
-   border: 3px solid var(--logo-color);
-   color: #e7494b;
+  
+   color: var(--yellow-color);
 }
 
 .default-container {
@@ -635,11 +731,13 @@ main h3 {
    background-color: var(--yellow-color);
    color: white;
    border-radius: 3px;
-   font-family: sans-serif;
-   font-size: 14px;
-   transition: all 50ms linear;
-   cursor: pointer;
+  font-family: "Lekton", sans-serif;
+   letter-spacing: 1.3pt;
+   color: #111111;
+   clear: both;
+   padding-bottom: 5px;
 }
+
 .dropdown-button i {
    position: absolute;
    right: 16px;
@@ -656,6 +754,7 @@ main h3 {
 }
 .dropdown-button:hover {
    background-color: var(--logo-color);
+   color: white;
 }
 
 .button-label {
@@ -725,7 +824,7 @@ main h3 {
 
 .current-value {
    width: 80px;
-   border-bottom: 2px solid #346394;
+   border-bottom: 2px solid var(--logo-color);
    text-align: center;
    padding: 0 .5em 0.2em 0.4em;
    margin: 0 1em 0 0;
@@ -755,6 +854,10 @@ main h3 {
 
 @media screen and (max-width: 800px){
 
+   #design-display {
+      top: 25%;
+   }
+
    .mobile-controls{
       width: 100%;
       height: 60px;
@@ -767,7 +870,7 @@ main h3 {
    .mobile-icon {
       display: flex;
       /* opacity: 1; */
-      background: #464646;
+      background: var(--logo-color);;
       border: 2px solid #26272f;
       width: 25%;
       text-align: center;
@@ -824,7 +927,7 @@ main h3 {
    .image-container,
    .text-design,
    .default-container {
-      border-bottom: 0px solid #34485f;
+      border-bottom: 0px solid var(--logo-color);;
       padding: .8em;
       left: 0;
       top: 0;
@@ -835,6 +938,7 @@ main h3 {
 
    footer {
       display: none;
+      
    }
 
    .info-container {
@@ -860,7 +964,7 @@ main h3 {
       width: 100%;
       z-index: -5;
       top: 44px;
-      left: 18px;
+      /* right: 61px; */
       position: fixed;
    }
 
@@ -899,7 +1003,7 @@ main h3 {
 /* FOOTER ========================= */
 
 footer{
-   height: 56px;
+   height: 90px;
 }
 
 footer p {
@@ -927,7 +1031,7 @@ footer p {
       max-width: 100%;
    }
    .shirt-container {
-       width: 88%;
+       width: 100%;
        box-shadow: 11px 12px 17px 0px rgba(0, 0, 0, 0);
        /* position: relative; */
    }
