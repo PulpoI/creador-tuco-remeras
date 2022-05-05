@@ -88,7 +88,11 @@
       <section class="shirt-container">
         <div id="tee" class="current-tee">
           <canvas id="canvas"> </canvas>
-          <img class="tee" src="../../images/shirt-front-black.png" />
+          <img
+            class="tee"
+            id="producto"
+            src="../../images/shirt-front-black.png"
+          />
         </div>
         <div class="current-design">
           <div id="design-target" class="print-area">
@@ -116,16 +120,20 @@
                     <i class="fa fa-angle-down"></i>
                   </button>
                   <ul class="dropdown-options">
-                    <a href="#"
-                      ><li class="dropdown-option is-selected" id="Mens-tee">
-                        Remera
-                      </li></a
+                    <li
+                      class="dropdown-option seleccionarPrenda is-selected"
+                      id="Mens-tee"
                     >
-                    <a href="../hoodie/hoodie-front-black.html"
-                      ><li class="dropdown-option" id="Womens-tee">
-                        Buzo Canguro
-                      </li></a
+                      Remera
+                    </li>
+
+                    <li
+                      class="dropdown-option seleccionarPrenda"
+                      id="Womens-tee"
                     >
+                      Hoodie
+                    </li>
+
                     <!--
                            <li class="dropdown-option" id="Youth-tee"><a href="home.html">Buzo Simple</a></li> -->
                   </ul>
@@ -145,46 +153,76 @@
                     <i class="fa fa-angle-down"></i>
                   </button>
                   <ul class="dropdown-options">
-                    <a href="#"
-                      ><li class="dropdown-option is-selected" id="Front">
-                        Frente
-                      </li></a
-                    >
-                    <a href="shirt-back-black.html"
-                      ><li class="dropdown-option" id="Back">Espalda</li></a
-                    >
+                    <li class="dropdown-option is-selected" id="Front">
+                      Frente
+                    </li>
+
+                    <li class="dropdown-option" id="Back">Espalda</li>
+
                     <!--
                            <li class="dropdown-option" id="Sleeve">Sleeve</li> -->
                   </ul>
                 </div>
               </div>
               <div class="value-container">
-                <span id="placement-value" class="current-value"> Frente </span>
+                <span id="placement-value" class="current-value">Frente </span>
               </div>
             </div>
           </div>
           <hr />
 
           <!-- GARMENT COLOR -->
-          <div class="flex-row">
+          <!--
             <div class="flex-row">
-              <span>Color:</span>
-              <span class="current-value">Negro</span>
+              <div>
+                <div class="prenda">
+                  <h3>Color</h3>
+  
+                  <ul class="dropdown-options">
+                    <button
+                      class="dropdown-option dropdown-button"
+                      is-selected
+                      id="Black"
+                    >
+                      Negro
+                    </button>
+  
+                    <button class="dropdown-option dropdown-button" id="White">
+                      Blanco
+                    </button>
+                    <button class="dropdown-option dropdown-button" id="Gray">
+                      Gris Melange
+                    </button>
+                    <!--
+                           <li class="dropdown-option" id="Sleeve">Sleeve</li> --
+                  </ul>
+                </div>
+              </div>
+              <div class="value-container">
+                <span id="placement-value" class="current-value">Negro </span>
+              </div>
             </div>
+
+          -->
+         
             <div class="flex-row">
-              <a href="#"
-                ><div class="garment-swatch black is-selected"></div
-              ></a>
-              <a href="shirt-front-white.html"
-                ><div class="garment-swatch white"></div
-              ></a>
-              <!---
-                  <div class="garment-swatch silver"></div>
-                  <div class="garment-swatch navy"></div>
-                  <div class="garment-swatch red"></div>
-                  <div class="garment-swatch charcoal"></div> -->
+              <div class="flex-row">
+                <span>Color:</span>
+                <span id="current-value" class="current-value">Negro</span>
+              </div>
+              <div class="flex-row">
+                <button class="garment-swatch black is-selected">Negro</button>
+  
+                <button class="garment-swatch white">Blanco</button>
+                <!---
+                    <div class="garment-swatch silver"></div>
+                    <div class="garment-swatch navy"></div>
+                    <div class="garment-swatch red"></div>
+                    <div class="garment-swatch charcoal"></div> 
+              </div>
             </div>
-          </div>
+
+          -->
           <span type="button" class="mobile-close"> CERRAR </span>
         </section>
         <!-- end of garment section  -->

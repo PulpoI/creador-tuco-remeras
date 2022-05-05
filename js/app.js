@@ -54,6 +54,91 @@ $(function () {
       });
   });
 
+  // Cambiar src de producto
+  const hoodieBlack = document.querySelector("#Womens-tee");
+  const shirtBlack = document.querySelector("#Mens-tee");
+  const front = document.querySelector("#Front");
+  const back = document.querySelector("#Back");
+  const white = document.querySelector(".white");
+  const black = document.querySelector(".black");
+
+  const style = document.querySelector("#style-value");
+  const placement = document.querySelector("#placement-value");
+  const current = document.querySelector("#current-value");
+
+  // Funcion CAMBIAR PRENDA
+  const funcionCambiarPrenda = function (s, p, c, s2) {
+    if (
+      style.innerText == s &&
+      placement.innerText == p &&
+      current.innerText == c
+    ) {
+      $(".tee").attr("src", `../../images/${s2}-${p}-${c}.png`);
+    }
+  };
+
+  const cambiarPrenda = function (p) {
+    p.addEventListener("click", () =>
+      funcionCambiarPrenda(
+        style.innerText,
+        placement.innerText,
+        current.innerText,
+        p.innerText
+      )
+    );
+  };
+  cambiarPrenda(hoodieBlack);
+  cambiarPrenda(shirtBlack);
+
+  // Funcion CAMBIAR POSICION
+  const funcionCambiarPosicion = function (s, p, c, s2) {
+    if (
+      style.innerText == s &&
+      placement.innerText == p &&
+      current.innerText == c
+    ) {
+      $(".tee").attr("src", `../../images/${s}-${s2}-${c}.png`);
+    }
+  };
+
+  const cambiarPosicion = function (p) {
+    p.addEventListener("click", () =>
+      funcionCambiarPosicion(
+        style.innerText,
+        placement.innerText,
+        current.innerText,
+        p.innerText
+      )
+    );
+  };
+  // Eventos funcionCambiarPosicion
+  cambiarPosicion(front);
+  cambiarPosicion(back);
+
+  const FuncionCambiarColor = function (s, p, c, c2) {
+    if (
+      style.innerText == s &&
+      placement.innerText == p &&
+      current.innerText == c
+    ) {
+      $(".tee").attr("src", `../../images/${s}-${p}-${c2}.png`);
+      current.innerText = c2;
+    }
+  };
+
+  const cambiarColor = function (p) {
+    p.addEventListener("click", () =>
+      FuncionCambiarColor(
+        style.innerText,
+        placement.innerText,
+        current.innerText,
+        p.innerText
+      )
+    );
+  };
+  cambiarColor(black);
+  cambiarColor(white);
+
   // NAV ACTIONS ================================
   $(".flex-nav ul li a").on("click", function () {
     $(".flex-nav ul li a").removeClass("nav-active");

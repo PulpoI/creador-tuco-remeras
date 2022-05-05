@@ -728,12 +728,13 @@ main h3 {
    height: 40px;
    background: none;
    border: none;
-   background-color: var(--yellow-color);
+   
+   background-color: var(--logo-color);
    color: white;
    border-radius: 3px;
   font-family: "Lekton", sans-serif;
    letter-spacing: 1.3pt;
-   color: #111111;
+   color:  var(--yellow-color);
    clear: both;
    padding-bottom: 5px;
 }
@@ -753,8 +754,8 @@ main h3 {
    outline: none;
 }
 .dropdown-button:hover {
-   background-color: var(--logo-color);
-   color: white;
+   background-color: var(--yellow-color) !important;
+   color:var(--logo-color);
 }
 
 .button-label {
@@ -812,6 +813,11 @@ main h3 {
 
 .dropdown-option.is-selected {
    color: var(--logo-color);
+   /* background-color: var(--yellow-color); */
+   text-decoration: line-through
+
+ 
+
 }
 
 .dropdown-option:hover {
