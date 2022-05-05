@@ -28,6 +28,7 @@ p{
    display: flex;
    /* flex-direction: row; */
    justify-content: space-around;
+   align-items: center;
    flex-wrap: wrap;
 }
 
@@ -578,8 +579,8 @@ main h3 {
 }
 
 .garment-swatch {
-   width: 1.5em;
-   height: 1.5em;
+   width: 4.5em;
+   height: 4.5em;
    border-radius: 50%;
    background-color: grey;
    margin-right: 8px;
@@ -588,6 +589,7 @@ main h3 {
 
 .black {
    background-color: black;
+   color: white;
 }
 
 .silver {
@@ -607,6 +609,14 @@ main h3 {
    border: 2px solid black;
 }
 
+.stacked {
+   align-items: unset;
+}
+
+.gray {
+   color: white;
+}
+
 .charcoal {
    background-color: var(--logo-color);;
 }
@@ -614,7 +624,8 @@ main h3 {
 .size-control {
    z-index: 20;
    margin-right: 0.4em;
-   width: 36px;
+   width: 41px;
+   height: 53px;
    border-radius: 3px;
    border: 1px solid var(--logo-color);
    background-image: linear-gradient(#fff, var(--logo-color));   font-size: .8em;

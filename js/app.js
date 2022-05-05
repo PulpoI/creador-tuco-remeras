@@ -1,7 +1,7 @@
 $(function () {
   console.log("STATIC Sanity Check");
-  // SCREN PANTALLA
 
+  // SCREN PANTALLA
   //Definimos el botón para escuchar su click, y también el contenedor del canvas
   const $boton = document.querySelector("#btnCapturar"), // El botón que desencadena
     $botonDescargar = document.querySelector("#btnDescargar"),
@@ -9,9 +9,8 @@ $(function () {
     $canvas = document.querySelector("#canvas"), // En dónde ponemos el elemento canvas
     $tee = document.querySelector(".tee");
 
-  $("#canvas").hide();
-
   // Agregar el listener al botón
+  $("#canvas").hide();
   $boton.addEventListener("click", () => {
     const opciones = {
       canvas: $canvas,
@@ -19,11 +18,8 @@ $(function () {
     html2canvas($objetivo, opciones) // Llamar a html2canvas y pasarle el elemento
       .then((canvas) => {
         // Cuando se resuelva la promesa traerá el canvas
-        //   $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
       });
     setTimeout(() => {
-      // $primerImg.remove();
-      // $segunImg.remove();
       $("#canvas").show();
       $("#tee").height("600px");
       if ($(window).width() < 767) {
@@ -36,6 +32,23 @@ $(function () {
       $tee.style.display = "none";
     }, 0010);
   });
+
+  // Reiniciar
+  const btnReiniciar = document.querySelector("#btnReiniciar");
+
+  const reiniciar = () => {
+    $("#canvas").hide();
+    // $("#tee").height("600px");
+    // if ($(window).width() < 767) {
+    //   $("#tee").height("440px");
+    // }
+    // $(window).scrollTop(0);
+    $("#design-display").attr("src", null);
+    $("#text-display").empty();
+    $("#custom-text").val("");
+    $tee.style.display = "flex";
+  };
+  btnReiniciar.addEventListener("click", reiniciar);
 
   // Descargar diseño generado
 
@@ -68,6 +81,7 @@ $(function () {
 
   // Funcion CAMBIAR PRENDA
   const funcionCambiarPrenda = function (s, p, c, s2) {
+    reiniciar();
     if (
       style.innerText == s &&
       placement.innerText == p &&
@@ -92,6 +106,7 @@ $(function () {
 
   // Funcion CAMBIAR POSICION
   const funcionCambiarPosicion = function (s, p, c, s2) {
+    reiniciar();
     if (
       style.innerText == s &&
       placement.innerText == p &&
@@ -116,6 +131,7 @@ $(function () {
   cambiarPosicion(back);
 
   const FuncionCambiarColor = function (s, p, c, c2) {
+    reiniciar();
     if (
       style.innerText == s &&
       placement.innerText == p &&
@@ -322,7 +338,7 @@ $(function () {
 
   // output the dimensions of the art size
   function calcArtDimensions() {
-    const rulerConverter = 5.8; // esto tenia 16 por defecto
+    const rulerConverter = 7; // esto tenia 16 por defecto
     let curWidth = $("#design-display").width();
     let curHeight = $("#design-display").height();
     let widthInInches = curWidth / rulerConverter;
