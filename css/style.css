@@ -332,20 +332,6 @@ main {
    
 }
 
-@media screen and (max-width: 1224px)  {
- 
-   .tee {
-      /* max-width: 100%;
-      max-height: 100%; */
-      width: 100%;
-      height: auto;
-      padding-top: 40px;
-      /* padding: 7% 5%; */
-      
-   }
-   
-}
-
 
 
 
@@ -521,6 +507,15 @@ input[type="color" i] {
    }
    .dropdown-container{
       width: 0 !important;
+   }
+   .tee {
+      /* max-width: 100%;
+      max-height: 100%; */
+      width: 100%;
+      height: auto;
+      padding-top: 40px;
+      /* padding: 7% 5%; */
+      
    }
    
 }
