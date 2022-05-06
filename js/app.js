@@ -515,7 +515,7 @@ $(function () {
     $("#image-control, #text-control, #default-control").slideUp();
     $(".fa-tshirt").addClass("active-image");
     $(".fa-file-image, .fa-font, .fa-question").removeClass("active-image");
-    $(".mobile-position").removeClass("show-position");
+    // $(".mobile-position").removeClass("show-position");
   });
   $("#mb-image").on("click", function () {
     $("#image-control").slideToggle();
