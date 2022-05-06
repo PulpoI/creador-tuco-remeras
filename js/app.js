@@ -1,166 +1,6 @@
 $(function () {
   console.log("STATIC Sanity Check");
 
-  // SCREEN PANTALLA
-  //Definimos el botón para escuchar su click, y también el contenedor del canvas
-  const $boton = document.querySelector("#btnCapturar"), // El botón que desencadena
-    $botonDescargar = document.querySelector("#btnDescargar"),
-    $objetivo = document.querySelector(".shirt-container"), // A qué le tomamos la foto
-    $canvas = document.querySelector("#canvas"), // En dónde ponemos el elemento canvas
-    $tee = document.querySelector(".tee");
-
-  // Agregar el listener al botón
-  $("#canvas").hide();
-  $boton.addEventListener("click", () => {
-    const opciones = {
-      canvas: $canvas,
-    };
-    html2canvas($objetivo, opciones) // Llamar a html2canvas y pasarle el elemento
-      .then((canvas) => {
-        // Cuando se resuelva la promesa traerá el canvas
-      });
-    setTimeout(() => {
-      $("#canvas").show();
-      $("#tee").height("auto");
-      if ($(window).width() < 767) {
-        $("#tee").height("100%");
-      }
-      $(window).scrollTop(0);
-      $("#design-display").attr("src", null);
-      $("#text-display").empty();
-      $("#custom-text").val("");
-      $tee.style.display = "none";
-    }, 0010);
-  });
-
-  // Reiniciar
-  const btnReiniciar = document.querySelector("#btnReiniciar");
-
-  const reiniciar = () => {
-    $("#canvas").hide();
-    // $("#tee").height("600px");
-    // if ($(window).width() < 767) {
-    //   $("#tee").height("440px");
-    // }
-    // $(window).scrollTop(0);
-    $("#design-display").attr("src", null);
-    $("#text-display").empty();
-    $("#custom-text").val("");
-    $tee.style.display = "flex";
-  };
-  btnReiniciar.addEventListener("click", reiniciar);
-
-  // Descargar diseño generado
-
-  // Agregar el listener al botón
-  $botonDescargar.addEventListener("click", () => {
-    html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
-      .then((canvas) => {
-        // Cuando se resuelva la promesa traerá el canvas
-        // Crear un elemento <a>
-        let enlace = document.createElement("a");
-        enlace.download = "Mi diseño.png";
-        // Convertir la imagen a Base64
-        enlace.href = canvas.toDataURL();
-        // Hacer click en él
-        enlace.click();
-      });
-  });
-
-  // Cambiar src de producto
-  const hoodieBlack = document.querySelector("#Womens-tee");
-  const shirtBlack = document.querySelector("#Mens-tee");
-  const front = document.querySelector("#Front");
-  const back = document.querySelector("#Back");
-  const white = document.querySelector(".white");
-  const black = document.querySelector(".black");
-
-  const style = document.querySelector("#style-value");
-  const placement = document.querySelector("#placement-value");
-  const current = document.querySelector("#current-value");
-
-  // Funcion CAMBIAR PRENDA
-  const funcionCambiarPrenda = function (s, p, c, s2) {
-    reiniciar();
-    if (
-      style.innerText == s &&
-      placement.innerText == p &&
-      current.innerText == c
-    ) {
-      $(".tee").attr("src", `../../images/${s2}-${p}-${c}.png`);
-    }
-  };
-
-  const cambiarPrenda = function (p) {
-    p.addEventListener("click", () =>
-      funcionCambiarPrenda(
-        style.innerText,
-        placement.innerText,
-        current.innerText,
-        p.innerText
-      )
-    );
-  };
-  cambiarPrenda(hoodieBlack);
-  cambiarPrenda(shirtBlack);
-
-  // Funcion CAMBIAR POSICION
-  const funcionCambiarPosicion = function (s, p, c, s2) {
-    reiniciar();
-    if (
-      style.innerText == s &&
-      placement.innerText == p &&
-      current.innerText == c
-    ) {
-      $(".tee").attr("src", `../../images/${s}-${s2}-${c}.png`);
-    }
-  };
-
-  const cambiarPosicion = function (p) {
-    p.addEventListener("click", () =>
-      funcionCambiarPosicion(
-        style.innerText,
-        placement.innerText,
-        current.innerText,
-        p.innerText
-      )
-    );
-  };
-  // Eventos funcionCambiarPosicion
-  cambiarPosicion(front);
-  cambiarPosicion(back);
-
-  const FuncionCambiarColor = function (s, p, c, c2) {
-    reiniciar();
-    if (
-      style.innerText == s &&
-      placement.innerText == p &&
-      current.innerText == c
-    ) {
-      $(".tee").attr("src", `../../images/${s}-${p}-${c2}.png`);
-      current.innerText = c2;
-    }
-  };
-
-  const cambiarColor = function (p) {
-    p.addEventListener("click", () =>
-      FuncionCambiarColor(
-        style.innerText,
-        placement.innerText,
-        current.innerText,
-        p.innerText
-      )
-    );
-  };
-  cambiarColor(black);
-  cambiarColor(white);
-
-  // NAV ACTIONS ================================
-  $(".flex-nav ul li a").on("click", function () {
-    $(".flex-nav ul li a").removeClass("nav-active");
-    $(this).addClass("nav-active");
-  });
-
   // DROPDOWN ACTIONS ================================
   let dropdownButtonEls = document.querySelectorAll(".dropdown-button");
   let dropdownEls = document.querySelectorAll(".dropdown");
@@ -298,11 +138,14 @@ $(function () {
       designDisplayEl.setAttribute("src", imgElAttr);
     });
   });
-  $(".default-image").on("click", function () {
-    $(
-      "#garment-control, #image-control, #text-control, #default-control"
-    ).slideUp();
-  });
+
+  if ($(window).innerWidth() <= 751) {
+    $(".default-image").on("click", function () {
+      $(
+        "#garment-control, #image-control, #text-control, #default-control"
+      ).slideUp();
+    });
+  }
 
   // DRAGGABLE IMAGE =====================
   $("#design-display").draggable({
@@ -545,3 +388,168 @@ $(function () {
     ).slideUp();
   });
 }); // end of document.ready
+
+//-------  MI CODIGO ---------
+// SCREEN PANTALLA
+//Definimos el botón para escuchar su click, y también el contenedor del canvas
+const $boton = document.querySelector("#btnCapturar"), // El botón que desencadena
+  $botonDescargar = document.querySelector("#btnDescargar"),
+  $objetivo = document.querySelector(".shirt-container"), // A qué le tomamos la foto
+  $canvas = document.querySelector("#canvas"), // En dónde ponemos el elemento canvas
+  $tee = document.querySelector(".tee");
+
+// Agregar el listener al botón
+$("#canvas").hide();
+$boton.addEventListener("click", () => {
+  const opciones = {
+    canvas: $canvas,
+  };
+  html2canvas($objetivo, opciones) // Llamar a html2canvas y pasarle el elemento
+    .then((canvas) => {
+      // Cuando se resuelva la promesa traerá el canvas
+    });
+  setTimeout(() => {
+    $("#canvas").show();
+    $("#tee").height("auto");
+    if ($(window).width() < 767) {
+      $("#tee").height("100%");
+    }
+    $(window).scrollTop(0);
+    $("#design-display").attr("src", null);
+    $("#text-display").empty();
+    $("#custom-text").val("");
+    $tee.style.display = "none";
+  }, 0010);
+});
+
+// Reiniciar
+const btnReiniciar = document.querySelector("#btnReiniciar");
+
+const reiniciar = () => {
+  $("#canvas").hide();
+  // $("#tee").height("600px");
+  // if ($(window).width() < 767) {
+  //   $("#tee").height("440px");
+  // }
+  // $(window).scrollTop(0);
+  $("#design-display").attr("src", null);
+  $("#text-display").empty();
+  $("#custom-text").val("");
+  $tee.style.display = "flex";
+};
+btnReiniciar.addEventListener("click", reiniciar);
+
+// Descargar diseño generado
+
+// Agregar el listener al botón
+$botonDescargar.addEventListener("click", () => {
+  html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
+    .then((canvas) => {
+      // Cuando se resuelva la promesa traerá el canvas
+      // Crear un elemento <a>
+      let enlace = document.createElement("a");
+      enlace.download = "Mi diseño.png";
+      // Convertir la imagen a Base64
+      enlace.href = canvas.toDataURL();
+      // Hacer click en él
+      enlace.click();
+    });
+});
+
+// Cambiar src de producto
+const hoodieBlack = document.querySelector("#Womens-tee");
+const simpleBlack = document.querySelector("#Simple");
+const shirtBlack = document.querySelector("#Mens-tee");
+const front = document.querySelector("#Front");
+const back = document.querySelector("#Back");
+
+const style = document.querySelector("#style-value");
+const placement = document.querySelector("#placement-value");
+const current = document.querySelector("#current-value");
+
+// Funcion CAMBIAR PRENDA
+const funcionCambiarPrenda = function (s, p, c, s2) {
+  reiniciar();
+  if (
+    style.innerText == s &&
+    placement.innerText == p &&
+    current.innerText == c
+  ) {
+    $(".tee").attr("src", `../../images/${s2}-${p}-${c}.png`);
+  }
+};
+
+const cambiarPrenda = function (p) {
+  p.addEventListener("click", () =>
+    funcionCambiarPrenda(
+      style.innerText,
+      placement.innerText,
+      current.innerText,
+      p.innerText
+    )
+  );
+};
+cambiarPrenda(hoodieBlack);
+cambiarPrenda(shirtBlack);
+cambiarPrenda(simpleBlack);
+
+// Funcion CAMBIAR POSICION
+const funcionCambiarPosicion = function (s, p, c, s2) {
+  reiniciar();
+  if (
+    style.innerText == s &&
+    placement.innerText == p &&
+    current.innerText == c
+  ) {
+    $(".tee").attr("src", `../../images/${s}-${s2}-${c}.png`);
+  }
+};
+
+const cambiarPosicion = function (p) {
+  p.addEventListener("click", () =>
+    funcionCambiarPosicion(
+      style.innerText,
+      placement.innerText,
+      current.innerText,
+      p.innerText
+    )
+  );
+};
+// Eventos funcionCambiarPosicion
+cambiarPosicion(front);
+cambiarPosicion(back);
+
+const white = document.querySelector(".white");
+const black = document.querySelector(".black");
+const gray = document.querySelector(".gray");
+const FuncionCambiarColor = function (s, p, c, c2) {
+  reiniciar();
+  if (
+    style.innerText == s &&
+    placement.innerText == p &&
+    current.innerText == c
+  ) {
+    $(".tee").attr("src", `../../images/${s}-${p}-${c2}.png`);
+    current.innerText = c2;
+  }
+};
+
+const cambiarColor = function (p) {
+  p.addEventListener("click", () =>
+    FuncionCambiarColor(
+      style.innerText,
+      placement.innerText,
+      current.innerText,
+      p.innerText
+    )
+  );
+};
+cambiarColor(black);
+cambiarColor(white);
+cambiarColor(gray);
+
+// NAV ACTIONS ================================
+$(".flex-nav ul li a").on("click", function () {
+  $(".flex-nav ul li a").removeClass("nav-active");
+  $(this).addClass("nav-active");
+});
