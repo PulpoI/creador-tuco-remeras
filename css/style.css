@@ -507,7 +507,6 @@ input[type="color" i] {
     top: 93%;
     margin-right: 60%;
     width: 100%;
-    z-index: 100;
    }
    .dropdown-container{
       width: 0 !important;
