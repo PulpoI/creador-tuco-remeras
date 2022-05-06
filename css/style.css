@@ -306,7 +306,7 @@ main {
    justify-content: space-between;
    /* box-shadow: 11px 12px 17px 0px rgba(0, 0, 0, 0.3); */
    box-shadow: 11px 12px 17px 0px rgb(199, 194, 187);
-   max-width: 40%;
+
    position: relative;
 
 }
@@ -415,7 +415,7 @@ main {
    justify-content: center;
 }
 .btns button {
-   margin-bottom: 20px;
+   margin-bottom: 5px;
 }
 
 .image-upload:hover {
@@ -460,6 +460,13 @@ input[type="color" i] {
    top: 22%;
    /* transform: translate(-50%, -50%); */
    position: relative;
+  
+}
+
+
+#design-target {
+  
+   opacity: 85%;
 }
 
 @media screen and (max-width: 1024px)  {
@@ -580,11 +587,20 @@ main h3 {
 
 .garment-swatch {
    width: 4.5em;
-   height: 4.5em;
+   height: 4.5em !important;
    border-radius: 50%;
    background-color: grey;
-   margin-right: 8px;
-   margin-top: 2px;
+   
+   margin:5px;
+   
+}
+
+.garment-swatch.is-selected {
+   width: 5em;
+   height: 5em !important;
+   border-radius: 50%;
+   border: 5px solid var(--yellow-color)
+   
 }
 
 .black {
@@ -727,7 +743,7 @@ main h3 {
    height: 40px;
    overflow: hidden;
    display: inline-block;
-   font-family: 'Lato', sans-serif;
+  
    border-radius: 3px;
    transition: height 150ms ease-in, box-shadow 130ms ease-out 120ms;
    z-index: 2;
@@ -792,12 +808,20 @@ main h3 {
    background: var(--logo-color);
    border-color: transparent;
 }
-.prenda.is-up {
+.prenda.is-up{
+   height: 120px; /*160px cuando hay 3 opciones*/
+   box-shadow: 0 13px 43px 0 rgba(0, 0, 0, 0.16);
+   transition: height 220ms ease-in 100ms, box-shadow 100ms ease-in;
+   z-index: 20;
+}
+
+.posicion.is-up {
    height: 120px; /*160px cuando hay 3 opciones*/
    box-shadow: 0 13px 43px 0 rgba(0, 0, 0, 0.16);
    transition: height 220ms ease-in 100ms, box-shadow 100ms ease-in;
    z-index: 10;
 }
+
 .dropdown-options {
    list-style: none;
    margin: 0;
@@ -833,8 +857,7 @@ main h3 {
 
 .dropdown-option:hover {
    /* color: #346394; */
-   font-weight: 900;
-   font-size: 17px;
+
 }
 
    /* VALUE SECTION ========== */
@@ -875,9 +898,26 @@ main h3 {
       top: 25%;
    }
 
+   .btns {
+      display: flex;
+      position: absolute;
+      column-gap: 10px;
+      flex-direction: row;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      top: 75%;
+   }
+   .btns button {
+      width: 90px;
+   }
+
+   h3{
+      text-align: center;
+   }
+
    .mobile-controls{
       width: 100%;
-      height: 60px;
       bottom: 0;
       left: 0;
       position: absolute;
@@ -893,6 +933,7 @@ main h3 {
       text-align: center;
       font-size: 1.4em;
       padding-top: 13px;
+      padding-bottom: 13px;
       text-shadow: 2px 2px 5px #827a7a;
    }
 
@@ -906,6 +947,7 @@ main h3 {
       margin: 3em auto;
       display: block;
       border: 2px solid #173456;
+      text-align: center;
    }
 
    .mobile-icon-pos {
@@ -966,7 +1008,7 @@ main h3 {
    .shirt-container-welcome,
    .info-container,
    .welcome-info-container {
-       background-color: rgba(255, 255, 255, 0.4);
+       /* background-color: rgba(255, 255, 255, 0.4); */
        /* border-radius: 2em; */
        margin: 0 auto;
        /* margin-bottom: 1em; */

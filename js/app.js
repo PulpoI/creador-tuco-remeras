@@ -165,6 +165,15 @@ $(function () {
   let dropdownButtonEls = document.querySelectorAll(".dropdown-button");
   let dropdownEls = document.querySelectorAll(".dropdown");
   let dropdownOptionEls = document.querySelectorAll(".dropdown-option");
+  let garment = document.querySelectorAll(".garment-swatch");
+
+  garment.forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      unselectSiblings(el);
+      el.classList.add("is-selected");
+      hideDropdown();
+    });
+  });
 
   // handles the open and closing of
   // drop down options
@@ -288,6 +297,11 @@ $(function () {
       // e.stopPropagation();
       designDisplayEl.setAttribute("src", imgElAttr);
     });
+  });
+  $(".default-image").on("click", function () {
+    $(
+      "#garment-control, #image-control, #text-control, #default-control"
+    ).slideUp();
   });
 
   // DRAGGABLE IMAGE =====================
