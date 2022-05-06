@@ -37,9 +37,10 @@ p{
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
-   flex-direction: column;
-   text-align: center;
+   flex-direction: row;
 }
+
+
 
 .flex-column {
    display: flex;
@@ -150,6 +151,10 @@ h4{
    .flex-nav li{
       flex-basis: 100%;
       border-top: 1px solid rgba(240, 248, 235,.4);
+   }
+
+   .flex-row-between {
+      flex-direction: column;
    }
 
    .nav-logo-hidden {
@@ -482,14 +487,13 @@ input[type="color" i] {
    #design-display {
       top: 15%;
    }
-   .flex-row{
-      flex-wrap: nowrap;
-   }
+
    canvas{
     
       /* padding-top: 40px !important; */
-      width: auto !important;
-      height:440px !important;
+      width: 100% !important;
+      height:auto !important;
+   
       /* padding: 7% 5% !important; */
    }
    .btns{
@@ -508,16 +512,7 @@ input[type="color" i] {
    .dropdown-container{
       width: 0 !important;
    }
-   .tee {
-      /* max-width: 100%;
-      max-height: 100%; */
-      width: 100%;
-      height: auto;
-      padding-top: 40px;
-      /* padding: 7% 5%; */
-      
-   }
-   
+
 }
 
 
@@ -544,6 +539,7 @@ input[type="color" i] {
    color: var(--logo-color);
    margin: 0;
    margin-bottom: .8em;
+   text-align: center;
 }
 
 .image-instr-bold {
@@ -951,6 +947,16 @@ footer p {
    .dropdown-button{
       height: 45px;
    }
+   .tee {
+      /* max-width: 100%;
+      max-height: 100%; */
+      width: 100%;
+      height: auto;
+      padding-top: 40px;
+      /* padding: 7% 5%; */
+      
+   }
+   
    main {
       height: auto;
       padding: 0;
@@ -983,6 +989,20 @@ footer p {
 
 
 }
+
+@media screen and (max-height: 660px) and (max-width: 400px) {
+   .garment,
+   .image-container,
+   .text-design,
+   .default-container {
+     
+      padding-top: 10% !important;
+     
+   }
+
+} 
+   
+
 
 @media screen and (max-width: 800px){
 

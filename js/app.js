@@ -1,7 +1,7 @@
 $(function () {
   console.log("STATIC Sanity Check");
 
-  // SCREN PANTALLA
+  // SCREEN PANTALLA
   //Definimos el botón para escuchar su click, y también el contenedor del canvas
   const $boton = document.querySelector("#btnCapturar"), // El botón que desencadena
     $botonDescargar = document.querySelector("#btnDescargar"),
@@ -21,9 +21,9 @@ $(function () {
       });
     setTimeout(() => {
       $("#canvas").show();
-      $("#tee").height("600px");
+      $("#tee").height("auto");
       if ($(window).width() < 767) {
-        $("#tee").height("440px");
+        $("#tee").height("100%");
       }
       $(window).scrollTop(0);
       $("#design-display").attr("src", null);
