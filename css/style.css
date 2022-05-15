@@ -409,11 +409,11 @@ main {
    justify-content: center;
 }
 
-@media screen and (max-width: 800px) and (max-height: 730px)  {
+/* @media screen and (max-width: 800px) and (max-height: 730px)  {
    .btns{
-      top: 72% !important;
+      top: 74% !important;
    }
-}
+} */
 
 
 @media screen and (max-width: 800px) and (max-height: 580px)  {
@@ -1017,7 +1017,7 @@ footer p {
       align-content: center;
       justify-content: center;
       align-items: center;
-      top: 76%;
+      top: 75%;
       width: 100%;
       margin-right: 0;
    }
