@@ -414,7 +414,7 @@ $boton.addEventListener("click", () => {
     if ($(window).width() < 767) {
       $("#tee").height("100%");
     }
-    $(window).scrollTop(0);
+    // $(window).scrollTop(2);
     $("#design-display").attr("src", null);
     $("#text-display").empty();
     $("#custom-text").val("");
@@ -445,7 +445,7 @@ btnReiniciar.addEventListener("click", reiniciar);
 $botonDescargar.addEventListener("click", () => {
   html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
     .then((canvas) => {
-      // Cuando se resuelva la promesa traerá el canvas
+      // 2o se resuelva la promesa traerá el canvas
       // Crear un elemento <a>
       let enlace = document.createElement("a");
       enlace.download = "Mi diseño.png";
