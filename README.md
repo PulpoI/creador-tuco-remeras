@@ -2,7 +2,7 @@
 
 # _Info:_
 
-Rediseño del proyecto [https://github.com/oxleberry/mocked](MOCKED) de [http://www.oxleberry.com/](Sharon Paz).
+Rediseño del proyecto [MOCKED](https://github.com/oxleberry/mocked) de [Sharon Paz](http://www.oxleberry.com).
 Proyecto original:
 [http://www.oxleberry.com/creative-coding/mocked/mocked.html](http://www.oxleberry.com/creative-coding/mocked/mocked.html)
 
