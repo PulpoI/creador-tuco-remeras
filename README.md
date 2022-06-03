@@ -3,8 +3,9 @@
 # _Info:_
 
 Rediseño del proyecto [MOCKED](https://github.com/oxleberry/mocked) de [Sharon Paz](http://www.oxleberry.com).
-Proyecto original:
-[http://www.oxleberry.com/creative-coding/mocked/mocked.html](http://www.oxleberry.com/creative-coding/mocked/mocked.html)
+
+- Proyecto original:
+  [http://www.oxleberry.com/creative-coding/mocked/mocked.html](http://www.oxleberry.com/creative-coding/mocked/mocked.html)
 
 # Con su permiso pude utilizar su código y adaptarlo a mis necesidades
 
